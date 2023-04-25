@@ -14,7 +14,8 @@
     <!-- dbcp datasource -->
     <bean id="dbcpDataSource"
           class="org.apache.commons.dbcp2.BasicDataSource"
-          p:driverClassName="${DRV}" p:url="${URL}"
+          p:driverClassName="${DRV}"
+          p:url="${URL}"
           p:username="${USR}" p:password="${PWD}" />
 
     <!-- jdbc template -->
