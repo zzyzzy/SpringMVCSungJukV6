@@ -40,7 +40,7 @@ public class SungJukV6DAOImpl implements SungJukV4DAO {
             // 매개변수 정의
             Object[] params = new Object[]{
                     sj.getName(), sj.getKor(), sj.getEng(),
-                    sj.getMat(), sj.getTot(), sj.getAvg(), sj.getGrd()
+                    sj.getMat(), sj.getTot(), sj.getAvg(), sj.getGrd()+""
             };
             cnt = jdbcTemplate.update(insertSQL, params);
         } catch (Exception ex) {
@@ -97,9 +97,10 @@ public class SungJukV6DAOImpl implements SungJukV4DAO {
 
     @Override
     public int updateSungJuk(SungJukVO sj) {
-        int cnt = -1;
+        Object[] param = new Object[] { sj.getKor(), sj.getEng(), sj.getMat(),
+            sj.getTot(), sj.getAvg(), sj.getGrd()+"", sj.getSjno() };
 
-        return cnt;
+        return jdbcTemplate.update(updateSQL, param);
     }
 
     @Override
