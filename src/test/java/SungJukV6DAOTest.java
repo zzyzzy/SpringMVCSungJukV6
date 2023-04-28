@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import siestageek.spring4.sungjukv6.dao.SungJukV4DAO;
-import siestageek.spring4.sungjukv6.dao.SungJukV6DAOImpl;
 import siestageek.spring4.sungjukv6.model.SungJukVO;
 
 import java.util.List;

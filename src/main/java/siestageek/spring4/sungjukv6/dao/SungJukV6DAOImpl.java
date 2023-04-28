@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import siestageek.spring4.sungjukv6.model.SungJukVO;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 @Repository("sjdao")
@@ -25,27 +23,27 @@ public class SungJukV6DAOImpl implements SungJukV4DAO {
 
     @Override
     public int insertSungJuk(SungJukVO sj) {
-        return 0;
+        return sqlSession.insert("sungjuk.insertsql", sj);
     }
 
     @Override
     public List<SungJukVO> selectSungJuk() {
-        return null;
+        return sqlSession.selectList("sungjuk.selectsql");
     }
 
     @Override
     public SungJukVO selectOneSungJuk(int sjno) {
-        return null;
+        return sqlSession.selectOne("sungjuk.selectonesql", sjno);
     }
 
     @Override
     public int updateSungJuk(SungJukVO sj) {
-        return 0;
+        return sqlSession.update("sungjuk.updatesql", sj);
     }
 
     @Override
     public int deleteSungJuk(int sjno) {
-        return 0;
+        return sqlSession.delete("sungjuk.deletesql", sjno);
     }
 
 
